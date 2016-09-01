@@ -85,7 +85,7 @@ What it sets up
 [NPM]: https://www.npmjs.org/
 [Postgres]: http://www.postgresql.org/
 [Qt]: http://qt-project.org/
-[RVM]: https://github.com/sstephenson/rbenv
+[RVM]: https://rvm.io/
 [RCM]: https://github.com/thoughtbot/rcm
 [Redis]: http://redis.io/
 [Ruby Build]: https://github.com/sstephenson/ruby-build
