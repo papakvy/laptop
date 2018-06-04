@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Welcome to the Nimbl3 laptop script!
 # Be prepared to turn your laptop (or desktop, no haters here)
@@ -113,6 +113,7 @@ brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 tap "caskroom/cask"
+tap "heroku/brew"
 
 # Unix
 brew "universal-ctags", args: ["HEAD"]
@@ -125,8 +126,6 @@ brew "vim"
 brew "watchman"
 brew "gpg2"
 brew "zsh"
-fancy_echo "Extending zsh with oh-my-zsh ..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Heroku
 brew "heroku/brew/heroku"
@@ -151,10 +150,26 @@ cask "docker"
 brew "postgres"
 brew "redis"
 
-# Basics
-cask "google-chrome"
-cask "slack"
 EOF
+
+# Basics Apps
+
+if [ ! -d "/Applications/Google Chrome.app" ]; then
+  fancy_echo "Installing Google Chrome.."
+  brew cask install google-chrome
+  fancy_echo "Google Chrome installed."
+fi
+
+if [ ! -d "/Applications/Slack.app" ]; then
+  fancy_echo "Installing Slack.."
+  brew cask install slack
+  fancy_echo "Slack installed."
+fi
+
+brew link --overwrite gnupg
+
+fancy_echo "Extending zsh with oh-my-zsh ..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 if brew list | grep --silent "qt@5.5"; then
   fancy_echo "Symlink qmake binary to /usr/local/bin for Capybara Webkit..."
@@ -171,6 +186,7 @@ brew link --force heroku
 curl -sSL https://rvm.io/mpapis.asc | gpg2 --import
 curl -L https://get.rvm.io | bash -s stable
 
+source ~/.rvm/scripts/rvm
 rvm use ruby --install --default
 
 gem update --system
@@ -182,8 +198,18 @@ bundle config --global jobs $((number_of_cores - 1))
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
+if ! command -v nvm; then
+  fancy_echo "Adding nvm to zshrc automatically..."
+  append_to_zshrc '# nvm path
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion'
+fi
+
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
   # shellcheck disable=SC1090
   . "$HOME/.laptop.local"
 fi
+
+fancy_echo "Installation successful. Please open a new terminal window to continue"
