@@ -48,7 +48,8 @@ bash mac 2>&1 | tee ~/laptop.log
 * [Zsh] as your shell
 * [oh-my-zsh] to spice up your shell
 * [Google Chrome] as the default browser
-* [Slack] to manage communications
+* [Slack] for general team communication
+* [Keybase] to have encrypted team communication
 
 [Bundler]: http://bundler.io/
 [Foreman]: https://github.com/ddollar/foreman
@@ -68,9 +69,9 @@ bash mac 2>&1 | tee ~/laptop.log
 [Docker]: https://www.docker.com/
 [Google Chrome]: https://www.google.com/chrome/
 [Slack]: https://www.slack.com/
+[Keybase]: https://keybase.io/
 
 It should take less than 15 minutes to install (depending on your machine and internet speed).
-
 
 ## Customize in `~/.laptop.local`
 
@@ -91,10 +92,8 @@ brew 'tree'
 Write your customizations such that they can be run safely more than once.
 See the `mac` script for examples.
 
-Laptop functions such as `fancy_echo`,
-`brew_install_or_upgrade`, and
-`gem_install_or_update`
-can be used in your `~/.laptop.local`.
+Laptop functions such as `fancy_echo`,`brew_install_or_upgrade`, 
+and `gem_install_or_update` can be used in your `~/.laptop.local`.
 
 See the [wiki](https://github.com/thoughtbot/laptop/wiki)
 for more customization examples.
