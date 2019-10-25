@@ -65,7 +65,7 @@ What it sets up
 * [Tmux] for saving project state and switching between projects
 * [Zsh] as your shell
 * [oh-my-zsh] to spice up your shell
-* [Google Chrome] as teh default browser
+* [Google Chrome] as the default browser
 * [Slack] to manage communications
 
 [Bundler]: http://bundler.io/
@@ -87,7 +87,7 @@ What it sets up
 [Google Chrome]: https://www.google.com/chrome/
 [Slack]: https://www.slack.com/
 
-It should take less than 15 minutes to install (depends on your machine).
+It should take less than 15 minutes to install (depending on your machine and internet speed).
 
 Customize in `~/.laptop.local`
 ------------------------------
@@ -134,24 +134,23 @@ brew install shellcheck
 License
 -------
 
-Laptop is © 2014-2018 Nimbl3, Ltd.
-It is free software,
+It is free software, 
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: LICENSE
 
-About Nimbl3
+About 
 ----------------
 
-![Nimbl3](https://dtvm7z6brak4y.cloudfront.net/logo/logo-repo-readme.jpg)
+![Nimble](https://assets.nimblehq.co/logo/dark/logo-dark-text-160.png)
 
-This project is maintained and funded by Nimbl3 Ltd.
+This project is maintained and funded by Nimble.
 
-Inspired by the [project] of thoughtbot.
+Inspired by the [project] of Thoughtbot.
 
 We love open source and do our part in sharing our work with the community!
 See [our other projects][community] or [hire our team][hire] to help build your product.
 
 [project]: https://github.com/thoughtbot/laptop
-[community]: https://github.com/nimbl3
-[hire]: https://nimbl3.com/
+[community]: https://github.com/nimblehq
+[hire]: https://nimblehq.co/
