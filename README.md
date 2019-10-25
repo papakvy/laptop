@@ -1,9 +1,7 @@
 <p align="center">
   <img alt="Nimble logo" src="https://assets.nimblehq.co/logo/light/logo-light-text-320.png" />
 </p>
-<p align="center">
-    <h1>Laptop</h1>
-</p>
+
 ---
 
 Laptop is a script to set up an OS X laptop for web development.
@@ -32,14 +30,6 @@ curl --remote-name https://raw.githubusercontent.com/nimbl3/laptop/master/mac
 less mac
 bash mac 2>&1 | tee ~/laptop.log
 ```
-
-## Debugging
-
-Your last Laptop run will be saved to `~/laptop.log`.
-Read through it to see if you can debug the issue yourself.
-If not, copy the lines where the script failed into a
-[new GitHub Issue](https://github.com/nimbl3/laptop/issues/new) for us.
-Or, attach the whole log file as an attachment.
 
 ## What it sets up
 
@@ -81,6 +71,7 @@ Or, attach the whole log file as an attachment.
 
 It should take less than 15 minutes to install (depending on your machine and internet speed).
 
+
 ## Customize in `~/.laptop.local`
 
 Your `~/.laptop.local` is run at the end of the Laptop script.
@@ -107,6 +98,14 @@ can be used in your `~/.laptop.local`.
 
 See the [wiki](https://github.com/thoughtbot/laptop/wiki)
 for more customization examples.
+
+## Debugging
+
+Your last Laptop run will be saved to `~/laptop.log`.
+Read through it to see if you can debug the issue yourself.
+If not, copy the lines where the script failed into a
+[new GitHub Issue](https://github.com/nimbl3/laptop/issues/new) for us.
+Or, attach the whole log file as an attachment.
 
 ## Contributing
 
