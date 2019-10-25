@@ -155,15 +155,21 @@ EOF
 # Basics Apps
 
 if [ ! -d "/Applications/Google Chrome.app" ]; then
-  fancy_echo "Installing Google Chrome.."
+  fancy_echo "Installing Google Chrome ..."
   brew cask install google-chrome
   fancy_echo "Google Chrome installed."
 fi
 
 if [ ! -d "/Applications/Slack.app" ]; then
-  fancy_echo "Installing Slack.."
+  fancy_echo "Installing Slack ..."
   brew cask install slack
   fancy_echo "Slack installed."
+fi
+
+if [ ! -d "/Applications/Keybase.app" ]; then
+  fancy_echo "Installing Keybase ..."
+  brew cask install keybase
+  fancy_echo "Keybase installed."
 fi
 
 brew link --overwrite gnupg
