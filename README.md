@@ -1,5 +1,10 @@
-Laptop
-======
+<p align="center">
+  <img alt="Nimble logo" src="https://assets.nimblehq.co/logo/light/logo-light-text-320.png" />
+</p>
+<p align="center">
+    <h1>Laptop</h1>
+</p>
+---
 
 Laptop is a script to set up an OS X laptop for web development.
 
@@ -7,20 +12,18 @@ It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
 based on what is already installed on the machine.
 
-Requirements
-------------
+## Requirements
 
 We support:
 
-* OS X El Capitan (10.11)
-* OS X Sierra (10.12)
 * OS X Grand Sierra (10.13)
+* OS X Mojave (10.14)
+* OS X Catalina (10.15)
 
 Older versions may work but aren't regularly tested. Bug reports for older
 versions are welcome.
 
-Install
--------
+## Install
 
 Download, review, then execute the script:
 
@@ -30,8 +33,7 @@ less mac
 bash mac 2>&1 | tee ~/laptop.log
 ```
 
-Debugging
----------
+## Debugging
 
 Your last Laptop run will be saved to `~/laptop.log`.
 Read through it to see if you can debug the issue yourself.
@@ -39,17 +41,7 @@ If not, copy the lines where the script failed into a
 [new GitHub Issue](https://github.com/nimbl3/laptop/issues/new) for us.
 Or, attach the whole log file as an attachment.
 
-OS X El Capitan (10.11)
------------------------
-
-You may have problems installing Homebrew for the first time on OS X El
-Capitan due to permission changes to the /usr directory (within which the Homebrew
-installation is typically located). See the [Homebrew El Capitan troubleshooting instructions](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/El_Capitan_and_Homebrew.md)
-for steps to resolve the permissions issues that interfere with Homebrew's
-installation.
-
-What it sets up
----------------
+## What it sets up
 
 * [Bundler] for managing Ruby libraries
 * [Docker] for managing project dependencies
@@ -89,8 +81,7 @@ What it sets up
 
 It should take less than 15 minutes to install (depending on your machine and internet speed).
 
-Customize in `~/.laptop.local`
-------------------------------
+## Customize in `~/.laptop.local`
 
 Your `~/.laptop.local` is run at the end of the Laptop script.
 Put your customizations there.
@@ -117,8 +108,7 @@ can be used in your `~/.laptop.local`.
 See the [wiki](https://github.com/thoughtbot/laptop/wiki)
 for more customization examples.
 
-Contributing
-------------
+## Contributing
 
 Edit the `mac` file.
 Document in the `README.md` file.
@@ -131,16 +121,14 @@ brew install shellcheck
 [ShellCheck]: http://www.shellcheck.net/about.html
 [Syntastic]: https://github.com/scrooloose/syntastic
 
-License
--------
+## License
 
 It is free software, 
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: LICENSE
 
-About 
-----------------
+## About 
 
 ![Nimble](https://assets.nimblehq.co/logo/dark/logo-dark-text-160.png)
 
