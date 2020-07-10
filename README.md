@@ -123,7 +123,7 @@ Do you want to install Android's dependencies? [y|N]
 
 ### Android
 * [Java] general-purpose programming language
-* [Figma] Android IDE
+* [Android Studio] Android IDE
 * [Android SDK] Software Development Kit for Android
 
 [Java]: https://openjdk.java.net/
