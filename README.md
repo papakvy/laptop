@@ -26,7 +26,7 @@ versions are welcome.
 Download, review, then execute the script:
 
 ```bash
-curl --remote-name https://raw.githubusercontent.com/nimbl3/laptop/master/mac
+curl --remote-name https://raw.githubusercontent.com/nimblehq/laptop/master/mac
 less mac
 bash mac 2>&1 | tee ~/laptop.log
 ```
@@ -92,7 +92,7 @@ brew 'tree'
 Write your customizations such that they can be run safely more than once.
 See the `mac` script for examples.
 
-Laptop functions such as `fancy_echo`,`brew_install_or_upgrade`, 
+Laptop functions such as `fancy_echo`,`brew_install_or_upgrade`,
 and `gem_install_or_update` can be used in your `~/.laptop.local`.
 
 See the [wiki](https://github.com/thoughtbot/laptop/wiki)
@@ -103,7 +103,7 @@ for more customization examples.
 Your last Laptop run will be saved to `~/laptop.log`.
 Read through it to see if you can debug the issue yourself.
 If not, copy the lines where the script failed into a
-[new GitHub Issue](https://github.com/nimbl3/laptop/issues/new) for us.
+[new GitHub Issue](https://github.com/nimblehq/laptop/issues/new) for us.
 Or, attach the whole log file as an attachment.
 
 ## Contributing
@@ -121,12 +121,12 @@ brew install shellcheck
 
 ## License
 
-It is free software, 
+It is free software,
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: LICENSE
 
-## About 
+## About
 
 ![Nimble](https://assets.nimblehq.co/logo/dark/logo-dark-text-160.png)
 
