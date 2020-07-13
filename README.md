@@ -41,6 +41,7 @@ Do you want to install Android's dependencies? [y|N]
 
 ## What it sets up
 ### Default
+* [Ruby] stable for writing general-purpose code
 * [Bundler] for managing Ruby libraries
 * [Keybase] to have encrypted team communication
 * [1Password] the world’s most-loved password manager
@@ -51,6 +52,7 @@ Do you want to install Android's dependencies? [y|N]
 * [iTerm2] a replacement for Terminal
 * [git] distributed revision control system
 * [Github CLI] GitHub’s official command line tool
+* [Github Desktop] GitHub’s official GUI tool
 * [Homebrew] for managing operating system libraries
 * [RVM] for managing versions of Ruby
 * [NVM] for managing versions of Node.JS
@@ -63,6 +65,7 @@ Do you want to install Android's dependencies? [y|N]
 * [libyaml] YAML Parser
 * [coreutils] GNU File, Shell, and Text utilities
 
+[Ruby]: https://www.ruby-lang.org/en/
 [Bundler]: http://bundler.io/
 [Keybase]: https://keybase.io/
 [1Password]: https://1password.com/
@@ -73,6 +76,7 @@ Do you want to install Android's dependencies? [y|N]
 [iTerm2]: https://www.iterm2.com/
 [git]: https://git-scm.com
 [Github CLI]: https://github.com/cli/cli
+[Github Desktop]: https://desktop.github.com/
 [Homebrew]: http://brew.sh/
 [RVM]: https://rvm.io/
 [NVM]: https://github.com/creationix/nvm
@@ -86,7 +90,6 @@ Do you want to install Android's dependencies? [y|N]
 [coreutils]: https://www.gnu.org/software/coreutils
 
 ### Web
-* [Ruby] stable for writing general-purpose code
 * [Go] programming language to build simple/reliable/efficient software
 * [Elixir] functional metaprogramming aware language built on Erlang VM
 * [Docker] for managing project dependencies
@@ -97,7 +100,6 @@ Do you want to install Android's dependencies? [y|N]
 * [Yarn] JavaScript package manager
 * [Phrase] for interacting with the Phrase API
 
-[Ruby]: https://www.ruby-lang.org/en/
 [Go]: https://golang.org
 [Elixir]: https://elixir-lang.org/
 [Docker]: https://www.docker.com/community-edition
