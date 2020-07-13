@@ -154,6 +154,15 @@ install_homebrew() {
   fi
 }
 
+setup_postgres() {
+  alias pg-start="pg_ctl -D /usr/local/var/postgres start"
+  alias pg-stop="pg_ctl -D /usr/local/var/postgres stop"
+  alias pg-restart="pg_ctl -D /usr/local/var/postgres restart"
+  pg-start
+  /usr/local/opt/postgres/bin/createuser -s postgres
+  pg-stop
+}
+
 append_general_dependencies() {
   fancy_echo "Appending general dependencies to Brewfile"
 
@@ -261,6 +270,7 @@ install_dependencies() {
   install_rvm
   install_nvm
   config_zsh
+  setup_postgres
 
   fancy_echo "Installed dependencies"
 }
