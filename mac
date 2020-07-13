@@ -176,7 +176,6 @@ append_general_dependencies() {
     cask "skitch"
     cask "postman"
     cask "iterm2"
-    cask "github"
 
     # Unix
     brew "universal-ctags", args: ["HEAD"]
@@ -185,8 +184,10 @@ append_general_dependencies() {
     brew "gpg2"
     brew "zsh"
 
-    # GitHub CLI
+    # GitHub extensions
     brew "github/gh/gh"
+    cask "github"
+    brew "git-lfs"
 
     # Editor
     cask "visual-studio-code"

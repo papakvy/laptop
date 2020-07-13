@@ -53,6 +53,7 @@ Do you want to install Android's dependencies? [y|N]
 * [git] distributed revision control system
 * [Github CLI] GitHub’s official command line tool
 * [Github Desktop] GitHub’s official GUI tool
+* [Git Large File Storage] an open source Git extension for versioning large files
 * [Homebrew] for managing operating system libraries
 * [RVM] for managing versions of Ruby
 * [NVM] for managing versions of Node.JS
@@ -75,6 +76,7 @@ Do you want to install Android's dependencies? [y|N]
 [git]: https://git-scm.com
 [Github CLI]: https://github.com/cli/cli
 [Github Desktop]: https://desktop.github.com/
+[Git Large File Storage]: https://git-lfs.github.com/
 [Homebrew]: http://brew.sh/
 [RVM]: https://rvm.io/
 [NVM]: https://github.com/creationix/nvm
