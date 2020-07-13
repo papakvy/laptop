@@ -176,6 +176,7 @@ append_general_dependencies() {
     cask "skitch"
     cask "postman"
     cask "iterm2"
+    cask "github"
 
     # Unix
     brew "universal-ctags", args: ["HEAD"]
@@ -190,7 +191,7 @@ append_general_dependencies() {
     brew "github/gh/gh"
 
     # Editor
-    # cask "visual-studio-code"
+    cask "visual-studio-code"
 
     # Programming language prerequisites and package managers
     brew "libyaml" # should come after openssl
