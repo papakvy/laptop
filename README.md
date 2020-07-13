@@ -56,11 +56,9 @@ Do you want to install Android's dependencies? [y|N]
 * [Homebrew] for managing operating system libraries
 * [RVM] for managing versions of Ruby
 * [NVM] for managing versions of Node.JS
-* [The Silver Searcher] a code-searching tool similar to ack, but faster
 * [Zsh] as your shell
 * [oh-my-zsh] to spice up your shell
 * [VS Code] code editor
-* [Watchman] watch files and take action when they change
 * [gpg2] GNU Pretty Good Privacy (PGP) package
 * [libyaml] YAML Parser
 * [coreutils] GNU File, Shell, and Text utilities
@@ -80,11 +78,9 @@ Do you want to install Android's dependencies? [y|N]
 [Homebrew]: http://brew.sh/
 [RVM]: https://rvm.io/
 [NVM]: https://github.com/creationix/nvm
-[The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
 [Zsh]: http://www.zsh.org/
 [oh-my-zsh]: http://ohmyz.sh/
 [VS Code]: https://code.visualstudio.com/
-[Watchman]: https://github.com/facebook/watchman
 [gpg2]: https://gnupg.org/
 [libyaml]: https://github.com/yaml/libyaml
 [coreutils]: https://www.gnu.org/software/coreutils

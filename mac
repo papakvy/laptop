@@ -182,8 +182,6 @@ append_general_dependencies() {
     brew "universal-ctags", args: ["HEAD"]
     brew "git"
     brew "openssl"
-    brew "the_silver_searcher"
-    brew "watchman"
     brew "gpg2"
     brew "zsh"
 
