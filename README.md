@@ -97,6 +97,7 @@ Do you want to install Android's dependencies? [y|N]
 * [Postgres] for storing relational data
 * [Yarn] JavaScript package manager
 * [Phrase] for interacting with the Phrase API
+* [JetBrains Toolbox] for managing JetBrains tools the easy way
 
 [Go]: https://golang.org
 [Elixir]: https://elixir-lang.org/
@@ -107,6 +108,7 @@ Do you want to install Android's dependencies? [y|N]
 [Postgres]: http://www.postgresql.org/
 [Yarn]: https://yarnpkg.com/
 [Phrase]: https://phrase.com/cli/
+[JetBrains Toolbox]: https://www.jetbrains.com/toolbox-app/
 
 ### iOS
 * [Cocoapods] a dependency manager for Cocoa projects

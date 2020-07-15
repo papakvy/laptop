@@ -233,6 +233,7 @@ append_web_dependencies() {
     # Others
     brew "yarn"
     brew "phrase"
+    cask "jetbrains-toolbox"
 EOF
 }
 
