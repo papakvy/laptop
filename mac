@@ -177,14 +177,14 @@ append_general_dependencies() {
     brew "mas"
 
     # General apps
-    cask "keybase"
-    cask "slack"
-    cask "google-chrome"
-    cask "1password"
+    cask "keybase" unless File.directory?("/Applications/Keybase.app")
+    cask "slack" unless File.directory?("/Applications/Slack.app")
+    cask "google-chrome" unless File.directory?("/Applications/Google Chrome.app")
+    cask "1password" unless File.directory?("/Applications/1Password 7.app")
     cask "1password-cli"
-    cask "skitch"
-    cask "postman"
-    cask "iterm2"
+    cask "skitch" unless File.directory?("/Applications/Skitch.app")
+    cask "postman" unless File.directory?("/Applications/Postman.app")
+    cask "iterm2" unless File.directory?("/Applications/iTerm.app")
 
     # Unix
     brew "universal-ctags", args: ["HEAD"]
@@ -195,11 +195,11 @@ append_general_dependencies() {
 
     # GitHub extensions
     brew "github/gh/gh"
-    cask "github"
+    cask "github" unless File.directory?("/Applications/GitHub Desktop.app")
     brew "git-lfs"
 
     # Editor
-    cask "visual-studio-code"
+    cask "visual-studio-code" unless File.directory?("/Applications/Visual Studio Code.app")
 
     # Programming language prerequisites and package managers
     brew "libyaml" # should come after openssl
