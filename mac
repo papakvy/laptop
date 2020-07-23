@@ -59,6 +59,8 @@ config_zsh() {
   if [[ ! $response =~ (n|no|N) ]];then
     sudo chsh -s $(which zsh)
 
+    append_to_zshrc 'ZSH_DISABLE_COMPFIX=true'
+
     fancy_echo "Installing Oh my Zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
