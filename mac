@@ -55,7 +55,8 @@ append_to_zshrc() {
 
 config_zsh() {
   read -r -p "Do you want to install Zsh's extensions? [Y|n] " response
-  if [[ $response =~ (n|no|N) ]];then
+
+  if [[ ! $response =~ (n|no|N) ]];then
     sudo chsh -s $(which zsh)
 
     fancy_echo "Installing Oh my Zsh"
@@ -139,12 +140,9 @@ install_homebrew() {
 }
 
 setup_postgres() {
-  alias pg-start="pg_ctl -D /usr/local/var/postgres start"
-  alias pg-stop="pg_ctl -D /usr/local/var/postgres stop"
-  alias pg-restart="pg_ctl -D /usr/local/var/postgres restart"
-  pg-start
+  pg_ctl -D /usr/local/var/postgres start
   /usr/local/opt/postgres/bin/createuser -s postgres
-  pg-stop
+  pg_ctl -D /usr/local/var/postgres stop
 }
 
 append_general_dependencies() {
@@ -299,6 +297,7 @@ install() {
 # Run
 install
 
-fancy_echo "Installation successful. Please open a new terminal window to continue"
-
+# Zsh extensions
 config_zsh
+
+fancy_echo "Installation successful"
