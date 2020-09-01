@@ -53,45 +53,32 @@ append_to_zshrc() {
   fi
 }
 
-update_shell() {
-  local shell_path;
-  shell_path="$(which zsh)"
-
-  fancy_echo "Changing your shell to zsh ..."
-  if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
-    fancy_echo "Adding '$shell_path' to /etc/shells"
-    sudo sh -c "echo $shell_path >> /etc/shells"
-  fi
-  sudo chsh -s "$shell_path" "$USER"
-}
-
 config_zsh() {
-  case "$SHELL" in
-    */zsh)
-      if [ "$(which zsh)" != '/usr/local/bin/zsh' ] ; then
-        update_shell
-      fi
-      ;;
-    *)
-      update_shell
-      ;;
-  esac
+  read -r -p "Do you want to install Zsh's extensions? [Y|n] " response
 
-  # Config Oh my ZSH
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  if [ ! -d ~/.zsh-defer ]; then
-    git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
+  if [[ ! $response =~ (n|no|N) ]];then
+    sudo chsh -s $(which zsh)
+
+    append_to_zshrc 'ZSH_DISABLE_COMPFIX=true'
+
+    fancy_echo "Installing Oh my Zsh"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    if [ ! -d ~/.zsh-defer ]; then
+      git clone https://github.com/romkatv/zsh-defer.git ~/.zsh-defer
+    fi
+    if [ ! -d ~/.zsh/zsh-autosuggestions ]; then
+      git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+    fi
+    if [ ! -d ~/.zsh/zsh-syntax-highlighting ]; then
+      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+    fi
+    if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-completions ]; then
+      git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+    fi
+
+    fancy_echo "Configured Zsh"
   fi
-  if [ ! -d ~/.zsh/zsh-autosuggestions ]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-  fi
-  if [ ! -d ~/.zsh/zsh-syntax-highlighting ]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-  fi
-  if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-completions ]; then
-    git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
-  fi
-  success "Configured zsh"
 }
 
 install_nvm() {
@@ -119,7 +106,13 @@ gem_install_or_update() {
 
 install_rvm() {
   fancy_echo "Installing RVM"
-  curl -sSL https://rvm.io/mpapis.asc | gpg2 --import
+
+  curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+  curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+
+  echo 409B6B1796C275462A1703113804BB82D39DC0E3:6: | gpg --import-ownertrust
+  echo 7D2BAF1CF37B13E2069D6956105BD0E739499BDB:6: | gpg --import-ownertrust
+
   curl -L https://get.rvm.io | bash -s stable
 
   source "$HOME/.rvm/scripts/rvm"
@@ -155,12 +148,9 @@ install_homebrew() {
 }
 
 setup_postgres() {
-  alias pg-start="pg_ctl -D /usr/local/var/postgres start"
-  alias pg-stop="pg_ctl -D /usr/local/var/postgres stop"
-  alias pg-restart="pg_ctl -D /usr/local/var/postgres restart"
-  pg-start
+  pg_ctl -D /usr/local/var/postgres start
   /usr/local/opt/postgres/bin/createuser -s postgres
-  pg-stop
+  pg_ctl -D /usr/local/var/postgres stop
 }
 
 append_general_dependencies() {
@@ -190,7 +180,7 @@ append_general_dependencies() {
     brew "universal-ctags", args: ["HEAD"]
     brew "git"
     brew "openssl"
-    brew "gpg2"
+    brew "gpg"
     brew "zsh"
 
     # GitHub extensions
@@ -270,7 +260,6 @@ install_dependencies() {
 
   install_rvm
   install_nvm
-  config_zsh
   setup_postgres
 
   fancy_echo "Installed dependencies"
@@ -316,4 +305,7 @@ install() {
 # Run
 install
 
-fancy_echo "Installation successful. Please open a new terminal window to continue"
+# Zsh extensions
+config_zsh
+
+fancy_echo "Installation successful"
