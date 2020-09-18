@@ -184,7 +184,7 @@ append_general_dependencies() {
     brew "zsh"
 
     # GitHub extensions
-    brew "github/gh/gh"
+    brew "gh"
     cask "github" unless File.directory?("/Applications/GitHub Desktop.app")
     brew "git-lfs"
 
