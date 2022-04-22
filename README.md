@@ -15,7 +15,7 @@ based on what is already installed on the machine.
 We support:
 
 - OS X Big Sur (11.6)
-- OS X Monterey (12.3)
+- OS X Monterey (12.3) both Apple Silicon and Intel
 
 Older versions may work but aren't regularly tested. This script is tested on the most recent and its previous version.
 
@@ -127,15 +127,21 @@ Do you want to install Android's dependencies? [y|N]
 
 ### Android
 
-- [Java] general-purpose programming language
+- [Temurin] OpenJDK from the Adoptium
 - [Android Studio] Android IDE
 - [Android SDK] Software Development Kit for Android
 
-[java]: https://openjdk.java.net/
+[temurin]: https://adoptium.net
 [android studio]: https://developer.android.com/studio/index.html
 [android sdk]: https://developer.android.com/studio/releases/sdk-tools
 
 It should take less than 15 minutes to install (depending on your machine and internet speed).
+
+### M1 incompatible dependecies
+
+- [Keybase] to have encrypted team communication
+
+It will omit all these dependencies above while running the script in the M1 machines.
 
 ## Customize in `~/.laptop.local`
 
