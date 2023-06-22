@@ -222,12 +222,6 @@ install_asdf_elixir() {
   install_asdf_language "elixir" "^\d+.\d+.?\d+?-otp-\d+$"
 }
 
-setup_postgres() {
-  pg_ctl -D "$HOMEBREW_PREFIX/var/postgresql@14" start
-  "$HOMEBREW_PREFIX/opt/postgresql@14/bin/createuser" -s postgres
-  pg_ctl -D "$HOMEBREW_PREFIX/var/postgresql@14" stop
-}
-
 append_general_dependencies() {
   fancy_echo "Appending general dependencies to Brewfile"
 
@@ -303,14 +297,14 @@ append_web_dependencies() {
     # Image manipulation
     brew "imagemagick"
 
-    # Databases
-    brew "postgresql@14"
-
     # Others
     brew "yarn"
     brew "phrase"
+    brew "libpq"
     cask "jetbrains-toolbox"
 EOF
+
+  append_to_zshrc 'export PATH="/opt/homebrew/opt/libpq/bin:$PATH"'
 }
 
 append_ios_dependencies() {
@@ -343,12 +337,6 @@ install_dependencies() {
 
   fancy_echo "Installing dependencies"
   brew bundle --global --verbose --no-upgrade
-
-  if [[ "$(which postgres)" =~ "postgres not found" ]]; then
-    setup_postgres
-  else
-    fancy_echo "postgres already installed, skipping setup"
-  fi
 
   fancy_echo "Installed dependencies"
 }
