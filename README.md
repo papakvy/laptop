@@ -4,18 +4,18 @@
 
 ---
 
-Laptop is a script to set up an OS X laptop for web development.
+Laptop is a script to set up a macOS environment for web development.
 
-It can be run multiple times on the same machine safely.
+The script is idempotent: It can run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
 based on what is already installed on the machine.
 
 ## Requirements
 
-We support:
+- macOS Sonoma (14.4) or higher
 
-- OS X Big Sur (11.6)
-- OS X Monterey (12.3) both Apple Silicon and Intel
+> [!NOTE]
+> Both Apple Silicon and Intel are supported
 
 Older versions may work but aren't regularly tested. This script is tested on the most recent and its previous version.
 
@@ -31,7 +31,7 @@ bash mac 2>&1 | tee ~/laptop.log
 
 Choose the additional packages when the prompts appear:
 
-```
+```text
 Do you want to install Web's dependencies? [y|N]
 Do you want to install iOS's dependencies? [y|N]
 Do you want to install Android's dependencies? [y|N]
@@ -41,75 +41,99 @@ Do you want to install Android's dependencies? [y|N]
 
 ### Default
 
-- [Ruby] stable for writing general-purpose code
-- [Bundler] for managing Ruby libraries
-- [Keybase] to have encrypted team communication
+Applications:
+
 - [1Password] the world’s most-loved password manager
-- [Slack] for general team communication
 - [Google Chrome] as the default browser
-- [Skitch] get your point across with fewer words using annotation, shapes and sketches
+- [Keybase] to have encrypted team communication
 - [Postman] a collaboration platform for API development
-- [iTerm2] a replacement for Terminal
+- [Skitch] get your point across with fewer words using annotation, shapes and sketches
+- [Slack] for general team communication
+- [VS Code] code editor
+
+[1password]: https://1password.com/
+[google chrome]: https://www.google.com/chrome/
+[keybase]: https://keybase.io/
+[postman]: https://www.postman.com/
+[skitch]: https://evernote.com/products/skitch
+[slack]: https://www.slack.com/
+[vs code]: https://code.visualstudio.com/
+
+Source Code versioning:
+
 - [git] distributed revision control system
+- [Git Large File Storage] an open-source Git extension for versioning large files
 - [Github CLI] GitHub’s official command line tool
 - [Github Desktop] GitHub’s official GUI tool
-- [Git Large File Storage] an open source Git extension for versioning large files
-- [Homebrew] for managing operating system libraries
-- [RVM] for managing versions of Ruby
-- [NVM] for managing versions of Node.JS
-- [Zsh] as your shell
-- [oh-my-zsh] to spice up your shell
-- [VS Code] code editor
-- [gpg2] GNU Pretty Good Privacy (PGP) package
-- [libyaml] YAML Parser
-- [coreutils] GNU File, Shell, and Text utilities
 
-[ruby]: https://www.ruby-lang.org/en/
-[bundler]: http://bundler.io/
-[keybase]: https://keybase.io/
-[1password]: https://1password.com/
-[slack]: https://www.slack.com/
-[google chrome]: https://www.google.com/chrome/
-[skitch]: https://evernote.com/products/skitch
-[postman]: https://www.postman.com/
-[iterm2]: https://www.iterm2.com/
 [git]: https://git-scm.com
 [github cli]: https://github.com/cli/cli
 [github desktop]: https://desktop.github.com/
 [git large file storage]: https://git-lfs.github.com/
-[homebrew]: http://brew.sh/
-[rvm]: https://rvm.io/
-[nvm]: https://github.com/creationix/nvm
-[zsh]: http://www.zsh.org/
-[oh-my-zsh]: http://ohmyz.sh/
-[vs code]: https://code.visualstudio.com/
-[gpg2]: https://gnupg.org/
-[libyaml]: https://github.com/yaml/libyaml
+
+Terminal:
+
+- [iTerm2] a replacement for Terminal
+- [oh-my-zsh] to spice up your shell
+- [Zsh] as your shell
+
+[iterm2]: https://www.iterm2.com/
+[oh-my-zsh]: https://ohmyz.sh/
+[zsh]: https://www.zsh.org/
+
+Utilities:
+
+- [asdf] to manage all your runtime versions with one tool
+- [Bundler] for managing Ruby libraries
+- [coreutils] GNU File, Shell, and Text utilities
+- [gpg2] GNU Pretty Good Privacy (PGP) package
+- [Homebrew] for managing operating system libraries
+- [mas CLI] A simple CLI for the Mac App Store.
+- [libyaml] YAML Parser
+
+[asdf]: https://asdf-vm.com/
+[bundler]: https://bundler.io/
 [coreutils]: https://www.gnu.org/software/coreutils
+[gpg2]: https://gnupg.org/
+[homebrew]: https://brew.sh/
+[mas cli]: https://github.com/mas-cli/mas
+[libyaml]: https://github.com/yaml/libyaml
 
 ### Web
 
-- [Go] programming language to build simple/reliable/efficient software
-- [Elixir] functional metaprogramming aware language built on Erlang VM
+Tools:
+
 - [Docker] for managing project dependencies
-- [Heroku CLI] for interacting with the Heroku API
-- [AWS CLI] official Amazon AWS command-line interface
 - [ImageMagick] for cropping and resizing images
-- [Postgres] for storing relational data
 - [Yarn] JavaScript package manager
-- [Phrase] for interacting with the Phrase API
 - [JetBrains Toolbox] for managing JetBrains tools the easy way
 
-[go]: https://golang.org
-[elixir]: https://elixir-lang.org/
 [docker]: https://www.docker.com/community-edition
+[imagemagick]: https://www.imagemagick.org/
+[yarn]: https://yarnpkg.com/
+[jetbrains toolbox]: https://www.jetbrains.com/toolbox-app/
+
+Command Line Interfaces:
+
+- [AWS CLI] official Amazon AWS command-line interface
+- [Heroku CLI] for interacting with the Heroku API
+- [Phrase CLI] for interacting with the Phrase API
+
 [heroku cli]: https://toolbelt.heroku.com/
 [aws cli]: https://aws.amazon.com/cli/
-[imagemagick]: http://www.imagemagick.org/
-[postgres]: http://www.postgresql.org/
-[yarn]: https://yarnpkg.com/
-[phrase]: https://phrase.com/cli/
-[jetbrains toolbox]: https://www.jetbrains.com/toolbox-app/
+[phrase cli]: https://phrase.com/cli/
+
+Plugins for asdf:
+
+- [Elixir] functional metaprogramming aware language built on Erlang VM
+- [Go] programming language to build simple/reliable/efficient software
+- [Nodejs] JavaScript runtime environment
+- [Ruby] dynamic, open-source programming language with a focus on simplicity and productivity
+
+[elixir]: https://elixir-lang.org/
+[go]: https://golang.org
+[nodejs]: https://nodejs.org/
+[ruby]: https://www.ruby-lang.org/en/
 
 ### iOS
 
@@ -185,7 +209,7 @@ Follow shell style guidelines by using [ShellCheck] and [Syntastic].
 brew install shellcheck
 ```
 
-[shellcheck]: http://www.shellcheck.net/about.html
+[shellcheck]: https://www.shellcheck.net/about.html
 [syntastic]: https://github.com/scrooloose/syntastic
 
 ## License

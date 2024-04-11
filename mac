@@ -222,6 +222,15 @@ install_asdf_elixir() {
   install_asdf_language "elixir" "^\d+.\d+.?\d+?-otp-\d+$"
 }
 
+install_asdf_golang() {
+  # shellcheck disable=SC1090
+  . "$(brew --prefix asdf)/libexec/asdf.sh"
+  add_or_update_asdf_plugin "golang" "https://github.com/asdf-community/asdf-golang.git"
+
+  fancy_echo "Installing latest Go ..."
+  install_asdf_language "golang" "^\d+.\d+.?\d+?-otp-\d+$"
+}
+
 append_general_dependencies() {
   fancy_echo "Appending general dependencies to Brewfile"
 
@@ -285,9 +294,6 @@ append_web_dependencies() {
     # Web
     tap "heroku/brew"
     tap "phrase/brewed"
-
-    # Languages
-    brew "go"
 
     # Devops
     cask "docker"
@@ -379,6 +385,7 @@ install() {
     install_asdf_nodejs
     install_asdf_erlang
     install_asdf_elixir
+    install_asdf_golang
   fi
 
   install_laptop_local
