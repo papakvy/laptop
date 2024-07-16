@@ -24,7 +24,7 @@ Older versions may work but aren't regularly tested. This script is tested on th
 Download, review, then execute the script:
 
 ```bash
-curl --remote-name https://raw.githubusercontent.com/nimblehq/laptop/master/mac
+curl --remote-name https://raw.githubusercontent.com/papakvy/laptop/master/mac
 less mac
 bash mac 2>&1 | tee ~/laptop.log
 ```
@@ -33,8 +33,6 @@ Choose the additional packages when the prompts appear:
 
 ```text
 Do you want to install Web's dependencies? [y|N]
-Do you want to install iOS's dependencies? [y|N]
-Do you want to install Android's dependencies? [y|N]
 ```
 
 ## What it sets up
