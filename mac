@@ -239,7 +239,7 @@ append_general_dependencies() {
     tap "thoughtbot/formulae"
     tap "homebrew/services"
     tap "universal-ctags/universal-ctags"
-    tap "github/gh"
+    # tap "github/gh"
 
     # mas-cli to install macOS apps
     brew "mas"
@@ -247,9 +247,9 @@ append_general_dependencies() {
     # General apps
     cask "slack" unless File.directory?("/Applications/Slack.app")
     cask "google-chrome" unless File.directory?("/Applications/Google Chrome.app")
-    cask "1password" unless File.directory?("/Applications/1Password 7.app")
-    cask "1password-cli"
-    cask "skitch" unless File.directory?("/Applications/Skitch.app")
+    # cask "1password" unless File.directory?("/Applications/1Password 7.app")
+    # cask "1password-cli"
+    # cask "skitch" unless File.directory?("/Applications/Skitch.app")
     cask "postman" unless File.directory?("/Applications/Postman.app")
     cask "iterm2" unless File.directory?("/Applications/iTerm.app")
 
@@ -260,17 +260,40 @@ append_general_dependencies() {
     brew "gpg"
     brew "zsh"
 
-    # GitHub extensions
-    brew "gh"
-    cask "github" unless File.directory?("/Applications/GitHub Desktop.app")
-    brew "git-lfs"
-
     # Editor
     cask "visual-studio-code" unless File.directory?("/Applications/Visual Studio Code.app")
+    cask "zed" unless File.directory?("/Applications/Zed.app")
 
     # Programming language prerequisites and package managers
     brew "libyaml" # should come after openssl
     brew "coreutils"
+
+    # Database client
+    cask "mysqlworkbench" unless File.directory?("/Applications/MySQLWorkbench.app")
+
+    # Devops
+    brew "terraform"
+    brew "ansible"
+
+    # Ultils
+    cask "openkey" unless File.directory?("/Applications/OpenKey.app")
+    cask "the-unarchiver" unless File.directory?("/Applications/The Unarchiver.app")
+    cask "authy" unless File.directory?("/Applications/Authy Desktop.app")
+    cask "avast-security"
+    cask "itsycal" unless File.directory?("/Applications/OpenVPN Connect/OpenVPN Connect.app")
+    cask "openvpn-connect"
+    cask "chatgpt" unless File.directory?("/Applications/ChatGPT.app")
+
+    # Communication
+    cask "zoom" unless File.directory?("/Applications/zoom.us.app")
+    cask "skype" unless File.directory?("/Applications/Skype.app")
+    cask "messenger" unless File.directory?("/Applications/Messenger.app")
+    cask "zalo" unless File.directory?("/Applications/Zalo.app")
+    
+
+    # Office
+    cask "microsoft-office"
+   
 EOF
 
   if [ "$ARCH" != "arm64" ]; then
@@ -292,12 +315,12 @@ append_web_dependencies() {
 
   tee -a "$HOME/.Brewfile" <<-EOF
     # Web
-    tap "heroku/brew"
-    tap "phrase/brewed"
+    # tap "heroku/brew"
+    # tap "phrase/brewed"
 
     # Devops
     cask "docker"
-    brew "heroku"
+    # brew "heroku"
     brew "awscli"
 
     # Image manipulation
@@ -305,9 +328,10 @@ append_web_dependencies() {
 
     # Others
     brew "yarn"
-    brew "phrase"
+    # brew "phrase"
     brew "libpq"
-    cask "jetbrains-toolbox"
+    # cask "jetbrains-toolbox"
+    # mas "JSON Peep for Safari", id: 1458969831
 EOF
 
   append_to_zshrc 'export PATH="/opt/homebrew/opt/libpq/bin:$PATH"'
@@ -322,7 +346,7 @@ append_ios_dependencies() {
     cask "figma"
     cask "proxyman"
     cask "sourcetree"
-    mas "XCode", id: 497799835
+    # mas "XCode", id: 497799835
 EOF
 }
 
@@ -357,8 +381,8 @@ install_laptop_local() {
 
 install() {
   read -r -p "Do you want to install Web's dependencies? [y|N] " web_dep
-  read -r -p "Do you want to install iOS's dependencies? [y|N] " ios_dep
-  read -r -p "Do you want to install Android's dependencies? [y|N] " android_dep
+  # read -r -p "Do you want to install iOS's dependencies? [y|N] " ios_dep
+  # read -r -p "Do you want to install Android's dependencies? [y|N] " android_dep
 
   pre_setup
   install_homebrew
@@ -383,9 +407,9 @@ install() {
     install_asdf
     install_asdf_ruby
     install_asdf_nodejs
-    install_asdf_erlang
-    install_asdf_elixir
-    install_asdf_golang
+    # install_asdf_erlang
+    # install_asdf_elixir
+    # install_asdf_golang
   fi
 
   install_laptop_local

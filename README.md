@@ -43,19 +43,13 @@ Do you want to install Android's dependencies? [y|N]
 
 Applications:
 
-- [1Password] the world’s most-loved password manager
 - [Google Chrome] as the default browser
-- [Keybase] to have encrypted team communication
 - [Postman] a collaboration platform for API development
-- [Skitch] get your point across with fewer words using annotation, shapes and sketches
 - [Slack] for general team communication
 - [VS Code] code editor
 
-[1password]: https://1password.com/
 [google chrome]: https://www.google.com/chrome/
-[keybase]: https://keybase.io/
 [postman]: https://www.postman.com/
-[skitch]: https://evernote.com/products/skitch
 [slack]: https://www.slack.com/
 [vs code]: https://code.visualstudio.com/
 
@@ -64,12 +58,9 @@ Source Code versioning:
 - [git] distributed revision control system
 - [Git Large File Storage] an open-source Git extension for versioning large files
 - [Github CLI] GitHub’s official command line tool
-- [Github Desktop] GitHub’s official GUI tool
 
 [git]: https://git-scm.com
 [github cli]: https://github.com/cli/cli
-[github desktop]: https://desktop.github.com/
-[git large file storage]: https://git-lfs.github.com/
 
 Terminal:
 
@@ -106,58 +97,24 @@ Tools:
 - [Docker] for managing project dependencies
 - [ImageMagick] for cropping and resizing images
 - [Yarn] JavaScript package manager
-- [JetBrains Toolbox] for managing JetBrains tools the easy way
 
 [docker]: https://www.docker.com/community-edition
 [imagemagick]: https://www.imagemagick.org/
 [yarn]: https://yarnpkg.com/
-[jetbrains toolbox]: https://www.jetbrains.com/toolbox-app/
 
 Command Line Interfaces:
 
 - [AWS CLI] official Amazon AWS command-line interface
-- [Heroku CLI] for interacting with the Heroku API
-- [Phrase CLI] for interacting with the Phrase API
 
 [heroku cli]: https://toolbelt.heroku.com/
-[aws cli]: https://aws.amazon.com/cli/
-[phrase cli]: https://phrase.com/cli/
 
 Plugins for asdf:
 
-- [Elixir] functional metaprogramming aware language built on Erlang VM
-- [Go] programming language to build simple/reliable/efficient software
 - [Nodejs] JavaScript runtime environment
 - [Ruby] dynamic, open-source programming language with a focus on simplicity and productivity
 
-[elixir]: https://elixir-lang.org/
-[go]: https://golang.org
 [nodejs]: https://nodejs.org/
 [ruby]: https://www.ruby-lang.org/en/
-
-### iOS
-
-- [Cocoapods] a dependency manager for Cocoa projects
-- [Figma] helps teams create, test, and ship better designs from start to finish
-- [Proxyman] enables developers to observe and manipulate HTTP/HTTPS requests
-- [Atlassian SourceTree] a free Git client for Mac
-- [XCode] iOS IDE
-
-[cocoapods]: https://cocoapods.org/
-[figma]: https://www.figma.com/
-[proxyman]: https://proxyman.io/
-[atlassian sourcetree]: https://www.sourcetreeapp.com/
-[xcode]: https://developer.apple.com/xcode/
-
-### Android
-
-- [Temurin] OpenJDK from the Adoptium
-- [Android Studio] Android IDE
-- [Android SDK] Software Development Kit for Android
-
-[temurin]: https://adoptium.net
-[android studio]: https://developer.android.com/studio/index.html
-[android sdk]: https://developer.android.com/studio/releases/sdk-tools
 
 It should take less than 15 minutes to install (depending on your machine and internet speed).
 
